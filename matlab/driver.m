@@ -6,8 +6,9 @@ close all
 % small matrix sizes
 % (good for accuracy tests)
 %%%%%%%%%%%%%%%%%%%%%%%%
+X = Matrix_Helmholtz(4000,8000);
 
-X = Matrix_Gaussian_exp(1000);
+%X = Matrix_Gaussian_exp(1000);
 
 %X = Matrix_SNN(1000);
 
@@ -69,7 +70,7 @@ blk = 64;
 
 
 tic
-[Q2, R2, p2, res_rbrp, time_rbrp, rank_rbrp] = RBRP(X, blk, 'random');
+[Q2, R2, p2, res_rbrp, time_rbrp, rank_rbrp] = RBRP_MGS(X, blk, 'random');
 t_rbrp = toc;
 
 
